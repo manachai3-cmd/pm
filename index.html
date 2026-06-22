@@ -6,6 +6,26 @@
 <title>PM เครื่องจักร</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<div id="login-screen" style="position:fixed; inset:0; background:#0f1117; z-index:9999; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px;">
+    <div style="width:100%; max-width:300px; text-align:center;">
+        <h2 style="color:#e8eaf0; margin-bottom:20px;">กรุณาใส่รหัสผ่าน</h2>
+        <input type="password" id="pass-input" placeholder="รหัสผ่านเข้าใช้งาน" style="margin-bottom:10px;">
+        <button onclick="checkPass()" style="width:100%; padding:10px; background:#4ade80; border:none; border-radius:10px; cursor:pointer; font-weight:600;">เข้าสู่ระบบ</button>
+    </div>
+</div>
+
+<script>
+function checkPass() {
+    const p = document.getElementById('pass-input').value;
+    if (p === "1234") { // เปลี่ยน 1234 เป็นรหัสที่คุณต้องการ
+        document.getElementById('login-screen').style.display = 'none';
+    } else {
+        alert("รหัสผ่านไม่ถูกต้อง");
+    }
+}
+</script>
+  
 <style>
 
 :root{--bg:#0f1117;--bg2:#161b27;--bg3:#1e2535;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.15);--text:#e8eaf0;--text2:#8b91a8;--text3:#555d72;--accent:#4ade80;--warn:#fbbf24;--danger:#f87171;--info:#60a5fa;--font:'IBM Plex Sans Thai',sans-serif;--mono:'IBM Plex Mono',monospace;--r:10px;--rl:16px;}
